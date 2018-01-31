@@ -1,2 +1,3 @@
 # vimrc
-my vim configuration
+
+自己使用的vim配置
