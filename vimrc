@@ -1,3 +1,5 @@
+
+
 set nocompatible              " be iMproved, required  不用vi的模式
 filetype off                  " required
 
@@ -9,15 +11,15 @@ call vundle#begin()    " vundle函数开始
 
 
 
-" 看这里：
-"     插件的来源有3个：github仓库，vundle自带，vim-scripts. 
-"     (注：如果插件在本地仓库，建议推到github)
-"     1. 对于github仓库： 仿照下面的写法，行开头都是Plugin的，要写作者和插件名
-"     2. 对于vundle自带： 仿照下面的写法，行开头都是Bundle的，直接写插件名
-"     3. 对于vim-scripts：仿照下面的下发，行开头是Plugin，直接写插件名
+" 科普：
+" 插件的来源有3个：github仓库，vundle自带，vim-scripts. 
+" (注：如果插件在本地仓库，建议推到github)
+" 1. 对于github仓库： 仿照下面的写法，行开头都是Plugin的，要写作者和插件名
+" 2. 对于vundle自带： 仿照下面的写法，行开头都是Bundle的，直接写插件名
+" 3. 对于vim-scripts：仿照下面的下发，行开头是Plugin，直接写插件名
 
 " 这是来源于github仓库的插件的写法
-" ==>> 管理Vundle自己(必须)
+" ==>> 管理自己(必须)
 Plugin 'VundleVim/Vundle.vim'
 
 " 这是来源于http://vim-scripts.org/vim/scripts.html的插件的写法
@@ -27,9 +29,7 @@ Plugin 'VundleVim/Vundle.vim'
 " 这是vundle自带的插件的写法，择需下载即可
 " Bundle 'EasyMotion'
 
-
-
-" ===============================我的插件===================================
+" ===============================================================================
 
 " =>> 辅助使用git，一般可能不需要
 " Plugin 'tpope/vim-fugitive'
@@ -80,8 +80,15 @@ Plugin 'bling/vim-airline'
 	" let Powerline_symbols='compatible'
 
 
-" ==>> 代码对齐的插件，使用方法请google
+" ==>> 代码对齐的插件
+" 常用方法1) 
 Plugin 'godlygeek/tabular'
+
+" ==>> 显示列对齐线插件
+Plugin 'Yggdroot/indentLine'
+    let g:indentLine_char = '┆'
+    let g:indentLine_enabled = 1
+    let g:indentLine_color_term = 239
 
 
 " ==>> 右边栏：变量及函数列表，按F9即可弹出/关闭
@@ -154,11 +161,14 @@ Bundle 'cscope.vim'
     " i: Find files #including this file
     nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
     let g:cscope_ignore_files = '\.Z$\|\.zip$\|\.zipx$\|\.lib'	" 忽视一些后缀
+    let g:cscope_silent = 1
 
 
 " ==>> 辅助cscope的，能自动加载cscope.out文件，若没找到，还能自动往上层目录
 Bundle 'autoload_cscope.vim'
-let g:autocscope_menus=0
+let g:autocscope_menus=0    "关掉默认的快捷键(上面已经定义了)
+
+
 
 
 " ==>>主题插件	
@@ -170,6 +180,17 @@ Bundle 'Solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required  函数结束
 filetype plugin indent on    " required 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
