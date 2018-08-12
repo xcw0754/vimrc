@@ -237,8 +237,6 @@ set cursorline
 " 显示行号
 set nu
 
-set history=100000
-
 " tab缩进为4个空格大小
 set tabstop=4
 
@@ -281,3 +279,5 @@ set tags=tags;
 " 用vim直接打开一个文件时会自动切到该文件目录下，不太喜欢
 " set autochdir
 
+" 搜索高亮
+set hlsearch 
